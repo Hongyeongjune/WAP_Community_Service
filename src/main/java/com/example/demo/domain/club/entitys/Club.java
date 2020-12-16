@@ -1,0 +1,43 @@
+package com.example.demo.domain.club.entitys;
+
+import com.sun.istack.NotNull;
+import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.time.LocalDateTime;
+
+@Getter
+@Entity(name = "club_tbl")
+@EqualsAndHashCode(of = "id")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Club {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long clubId;
+
+    @NotNull
+    private String clubName;
+
+    @CreationTimestamp
+    private LocalDateTime createDate;
+
+    private String city;
+
+    private String district;
+
+    private String logoUri;
+
+    private int likeCnt;
+
+    private int rudeCnt;
+
+    private int point;
+}
