@@ -45,7 +45,6 @@ public class Member {
     private LocalDateTime localDateTime;
 
     private int likeCnt;
-
     private int rudeCnt;
 
     private String pictureUri;
