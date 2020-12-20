@@ -30,12 +30,7 @@ public class Community {
     @CreationTimestamp
     private LocalDateTime registDate;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "club_id")
     private Club club;
-
-    @OneToMany(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<CommunityMember> communityMembers = new ArrayList<>();
-
-
 }
