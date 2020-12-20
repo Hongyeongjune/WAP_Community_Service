@@ -14,7 +14,7 @@ import java.util.List;
 
 @Getter
 @Entity(name = "club_tbl")
-@EqualsAndHashCode(of = "id")
+@EqualsAndHashCode(of = "clubId")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Club {
 
