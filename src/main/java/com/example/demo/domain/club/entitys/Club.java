@@ -1,5 +1,6 @@
 package com.example.demo.domain.club.entitys;
 
+import com.example.demo.domain.community.entitiys.Community;
 import com.sun.istack.NotNull;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -42,4 +43,9 @@ public class Club {
 
     @OneToMany(mappedBy = "club", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ClubMember> clubMembers = new ArrayList<>();
+
+    @OneToOne(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "community_id")
+    private Community community;
+
 }
