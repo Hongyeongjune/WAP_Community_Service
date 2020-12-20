@@ -2,10 +2,7 @@ package com.example.demo.domain.club.entitys;
 
 import com.example.demo.domain.community.entitiys.Community;
 import com.sun.istack.NotNull;
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -44,8 +41,18 @@ public class Club {
     @OneToMany(mappedBy = "club", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ClubMember> clubMembers = new ArrayList<>();
 
-    @OneToOne(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "community_id")
-    private Community community;
+    @OneToMany(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Community> community = new ArrayList<>();
+
+    @Builder
+    public Club(String clubName, String city, String district, String logoUri) {
+        this.clubName = clubName;
+        this.city = city;
+        this.district = district;
+        this.logoUri = logoUri;
+        this.likeCnt = 0;
+        this.rudeCnt = 0;
+        this.point = 0;
+    }
 
 }
