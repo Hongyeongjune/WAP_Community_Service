@@ -1,4 +1,4 @@
-package com.example.demo.domain.member.entitys;
+package com.example.demo.modules.crud.member.entitys;
 
 import com.example.demo.commons.enums.DisclosureScopeState;
 import com.example.demo.commons.enums.MemberRole;

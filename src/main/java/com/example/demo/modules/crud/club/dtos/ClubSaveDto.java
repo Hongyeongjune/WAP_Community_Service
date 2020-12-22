@@ -1,4 +1,4 @@
-package com.example.demo.domain.club.dtos;
+package com.example.demo.modules.crud.club.dtos;
 
 import lombok.Builder;
 import lombok.Getter;

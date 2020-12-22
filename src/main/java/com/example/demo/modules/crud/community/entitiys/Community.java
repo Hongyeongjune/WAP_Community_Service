@@ -1,10 +1,8 @@
-package com.example.demo.domain.community.entitiys;
+package com.example.demo.modules.crud.community.entitiys;
 
-import com.example.demo.domain.club.entitys.Club;
-import com.example.demo.domain.club.entitys.ClubMember;
-import com.example.demo.domain.member.entitys.Member;
+import com.example.demo.modules.crud.club.entitys.Club;
+import com.example.demo.modules.crud.member.entitys.Member;
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;

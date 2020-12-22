@@ -1,4 +1,4 @@
-package com.example.demo.domain.community.entitiys;
+package com.example.demo.modules.crud.community.entitiys;
 
 import lombok.AccessLevel;
 import lombok.Getter;

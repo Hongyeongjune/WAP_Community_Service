@@ -1,6 +1,6 @@
-package com.example.demo.domain.club.entitys;
+package com.example.demo.modules.crud.club.entitys;
 
-import com.example.demo.domain.community.entitiys.Community;
+import com.example.demo.modules.crud.community.entitiys.Community;
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

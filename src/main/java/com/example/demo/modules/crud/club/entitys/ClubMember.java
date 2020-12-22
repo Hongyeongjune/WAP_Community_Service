@@ -1,8 +1,8 @@
-package com.example.demo.domain.club.entitys;
+package com.example.demo.modules.crud.club.entitys;
 
 import com.example.demo.commons.enums.ClubMemberType;
 import com.example.demo.commons.enums.PositionType;
-import com.example.demo.domain.member.entitys.Member;
+import com.example.demo.modules.crud.member.entitys.Member;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

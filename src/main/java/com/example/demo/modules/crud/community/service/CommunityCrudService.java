@@ -1,17 +1,9 @@
-package com.example.demo.domain.community.service;
+package com.example.demo.modules.crud.community.service;
 
-import com.example.demo.commons.errors.exception.ClubMemberNotFoundException;
-import com.example.demo.commons.errors.exception.ClubNotFoundException;
-import com.example.demo.commons.errors.exception.MemberNotFoundException;
-import com.example.demo.domain.club.entitys.Club;
-import com.example.demo.domain.club.entitys.ClubMember;
-import com.example.demo.domain.club.repository.ClubCrudRepository;
-import com.example.demo.domain.club.repository.ClubMemberCrudRepository;
-import com.example.demo.domain.community.dtos.CommunitySaveDto;
-import com.example.demo.domain.community.entitiys.Community;
-import com.example.demo.domain.community.repository.CommunityCrudRepository;
-import com.example.demo.domain.member.entitys.Member;
-import com.example.demo.domain.member.repository.MemberCrudRepository;
+import com.example.demo.modules.crud.club.repository.ClubCrudRepository;
+import com.example.demo.modules.crud.club.repository.ClubMemberCrudRepository;
+import com.example.demo.modules.crud.community.repository.CommunityCrudRepository;
+import com.example.demo.modules.crud.member.repository.MemberCrudRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

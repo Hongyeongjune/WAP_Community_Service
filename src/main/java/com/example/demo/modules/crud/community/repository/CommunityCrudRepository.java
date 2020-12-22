@@ -1,8 +1,8 @@
-package com.example.demo.domain.community.repository;
+package com.example.demo.modules.crud.community.repository;
 
-import com.example.demo.domain.club.entitys.Club;
-import com.example.demo.domain.club.entitys.ClubMember;
-import com.example.demo.domain.community.entitiys.Community;
+import com.example.demo.modules.crud.club.entitys.Club;
+import com.example.demo.modules.crud.club.entitys.ClubMember;
+import com.example.demo.modules.crud.community.entitiys.Community;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
