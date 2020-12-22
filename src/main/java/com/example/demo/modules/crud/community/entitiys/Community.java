@@ -28,10 +28,6 @@ public class Community {
     @JoinColumn(name = "club_id")
     private Club club;
 
-    @ManyToOne(targetEntity = Member.class, fetch = FetchType.EAGER)
-    @JoinColumn(name = "member_id")
-    private Member member;
-
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "post_id")
     private List<Post> post = new ArrayList<>();
