@@ -1,6 +1,5 @@
 package com.example.demo.domain.community.service;
 
-import com.example.demo.commons.errors.ErrorCode;
 import com.example.demo.commons.errors.exception.ClubMemberNotFoundException;
 import com.example.demo.commons.errors.exception.ClubNotFoundException;
 import com.example.demo.commons.errors.exception.MemberNotFoundException;
@@ -25,33 +24,33 @@ public class CommunityCrudService {
     private final ClubMemberCrudRepository clubMemberCrudRepository;
     private final MemberCrudRepository memberCrudRepository;
 
-    public Community save(CommunitySaveDto dto) {
-
-        Club club = clubCrudRepository.findByClubNameAndCityAndDistrict(
-                dto.getClub().getClubName(),
-                dto.getClub().getClubCity(),
-                dto.getClub().getClubDistrict()
-        ).orElseThrow(ClubNotFoundException::new);
-
-        Member member = memberCrudRepository.findById(
-                dto.getClubMember().getMemberId()
-        ).orElseThrow(MemberNotFoundException::new);
-
-        ClubMember clubMember = clubMemberCrudRepository.findByClubAndMember(
-                club,
-                member
-        ).orElseThrow(ClubMemberNotFoundException::new);
-
-        return communityCrudRepository.save(
-                Community.builder()
-                .title(dto.getTitle())
-                .content(dto.getContent())
-                .like(dto.getLike())
-                .club(club)
-                .clubMember(clubMember)
-                .build()
-        );
-
-    }
+//    public Community save(CommunitySaveDto dto) {
+//
+//        Club club = clubCrudRepository.findByClubNameAndCityAndDistrict(
+//                dto.getClubName(),
+//                dto.getClubCity(),
+//                dto.getClubDistrict()
+//        ).orElseThrow(ClubNotFoundException::new);
+//
+//        Member member = memberCrudRepository.findById(
+//                dto.getMemberId()
+//        ).orElseThrow(MemberNotFoundException::new);
+//
+//        ClubMember clubMember = clubMemberCrudRepository.findByClubAndMember(
+//                club,
+//                member
+//        ).orElseThrow(ClubMemberNotFoundException::new);
+//
+//        return communityCrudRepository.save(
+//                Community.builder()
+//                .title(dto.getTitle())
+//                .content(dto.getContent())
+//                .like(dto.getLike())
+//                .club(club)
+//                .clubMember(clubMember)
+//                .build()
+//        );
+//
+//    }
 
 }
