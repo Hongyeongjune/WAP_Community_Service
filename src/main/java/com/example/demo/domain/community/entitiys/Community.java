@@ -23,30 +23,20 @@ public class Community {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long communityId;
 
-    private String title;
-
-    private String content;
-
-    private int like;
-
     @CreationTimestamp
     private LocalDateTime registDate;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "club_id")
     private Club club;
 
-    @ManyToOne(targetEntity = ClubMember.class, fetch = FetchType.EAGER)
-    @JoinColumn(name = "club_member_id")
-    private ClubMember clubMember;
+    @ManyToOne(targetEntity = Member.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "member_id")
+    private Member member;
 
-    @Builder
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "post_id")
+    private List<Post> post = new ArrayList<>();
 
-    public Community(String title, String content, int like, Club club, ClubMember clubMember) {
-        this.title = title;
-        this.content = content;
-        this.like = like;
-        this.club = club;
-        this.clubMember = clubMember;
-    }
+
 }
