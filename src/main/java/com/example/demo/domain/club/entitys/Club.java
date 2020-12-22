@@ -12,7 +12,7 @@ import java.util.List;
 
 @Getter
 @Entity(name = "club_tbl")
-@EqualsAndHashCode(of = "clubId")
+@EqualsAndHashCode(of = {"clubId", "clubName", "city", "district"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Club {
 
@@ -26,8 +26,10 @@ public class Club {
     @CreationTimestamp
     private LocalDateTime createDate;
 
+    //구리시
     private String city;
 
+    //인창동
     private String district;
 
     private String logoUri;
@@ -41,8 +43,8 @@ public class Club {
     @OneToMany(mappedBy = "club", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ClubMember> clubMembers = new ArrayList<>();
 
-    @OneToMany(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Community> community = new ArrayList<>();
+    @OneToOne(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Community community;
 
     @Builder
     public Club(String clubName, String city, String district, String logoUri) {
