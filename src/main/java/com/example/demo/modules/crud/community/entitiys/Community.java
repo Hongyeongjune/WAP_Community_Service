@@ -1,8 +1,8 @@
 package com.example.demo.modules.crud.community.entitiys;
 
 import com.example.demo.modules.crud.club.entitys.Club;
-import com.example.demo.modules.crud.member.entitys.Member;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -32,5 +32,8 @@ public class Community {
     @JoinColumn(name = "post_id")
     private List<Post> post = new ArrayList<>();
 
-
+    @Builder
+    public Community(Club club) {
+        this.club = club;
+    }
 }
