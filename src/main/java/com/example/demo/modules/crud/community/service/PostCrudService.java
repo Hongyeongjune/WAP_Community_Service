@@ -4,10 +4,7 @@ import com.example.demo.commons.errors.exception.*;
 import com.example.demo.modules.crud.club.entitys.Club;
 import com.example.demo.modules.crud.club.repository.ClubCrudRepository;
 import com.example.demo.modules.crud.club.repository.ClubMemberCrudRepository;
-import com.example.demo.modules.crud.community.dtos.PostDeleteDto;
-import com.example.demo.modules.crud.community.dtos.PostLikeUpdateDto;
-import com.example.demo.modules.crud.community.dtos.PostSaveDto;
-import com.example.demo.modules.crud.community.dtos.PostUpdateDto;
+import com.example.demo.modules.crud.community.dtos.*;
 import com.example.demo.modules.crud.community.entitiys.Community;
 import com.example.demo.modules.crud.community.entitiys.Post;
 import com.example.demo.modules.crud.community.repository.CommunityCrudRepository;
@@ -18,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -72,6 +70,23 @@ public class PostCrudService {
     public Post find(Long postId) {
         return postCrudRepository.findById(
                 postId
+        ).orElseThrow(PostNotFoundException::new);
+    }
+
+    public List<Post> findPostsByCommunity(PostFindDto dto) {
+
+        Club club = clubCrudRepository.findByClubNameAndCityAndDistrict(
+                dto.getClubName(),
+                dto.getClubCity(),
+                dto.getClubDistrict()
+        ).orElseThrow(ClubNotFoundException::new);
+
+        Community community = communityCrudRepository.findByClub(
+                club
+        ).orElseThrow(CommunityNotFoundException::new);
+
+        return postCrudRepository.findByCommunity(
+                community
         ).orElseThrow(PostNotFoundException::new);
     }
 
