@@ -5,12 +5,10 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class CommunitySaveDto {
+public class PostFindDto {
 
     private String clubName;
     private String clubCity;
     private String clubDistrict;
-
-    private String memberId;
 
 }
