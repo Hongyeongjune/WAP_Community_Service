@@ -9,6 +9,7 @@ public enum ErrorCode {
 
     //Member
     MEMBER_CANNOT_FOUND(400, "Can't found member"),
+    EMAIL_DUPLICATION(400, "This Email Already Exists"),
 
     //Club
     CLUB_CANNOT_FOUND(400, "Can't found Club"),
@@ -20,7 +21,12 @@ public enum ErrorCode {
     COMMUNITY_CANNOT_FOUND(400, "Can't found Community"),
 
     //Post
-    POST_CANNOT_FOUND(400, "Can't found Post");
+    POST_CANNOT_FOUND(400, "Can't found Post"),
+
+    //Security
+    INVALID_TOKEN(403, "Invalid JWT token"),
+    EXPIRED_TOKEN(403, "Expired JWT Token"),
+    HANDLE_ACCESS_DENIED(403, "Access is Denied");
 
     private final int code;
     private final String message;
