@@ -4,10 +4,7 @@ import com.example.demo.commons.enums.DisclosureScopeState;
 import com.example.demo.commons.enums.MemberRole;
 import com.example.demo.commons.enums.PositionType;
 import com.sun.istack.NotNull;
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -41,6 +38,8 @@ public class Member {
 
     private String city;
 
+    private String district;
+
     @CreationTimestamp
     private LocalDateTime localDateTime;
 
@@ -63,8 +62,27 @@ public class Member {
     private Set<MemberRole> roleSet;
 
     @Enumerated(value = EnumType.STRING)
+    private PositionType position;
+
+    @Enumerated(value = EnumType.STRING)
     private PositionType positionType;
 
     @Enumerated(value = EnumType.STRING)
     private DisclosureScopeState disclosureScopeState;
+
+    @Builder
+    public Member(String id, String password, String name, String city, String district, String pictureUri, PositionType position, Set<MemberRole> roleSet) {
+        this.id = id;
+        this.password = password;
+        this.name = name;
+        this.city = city;
+        this.district = district;
+        this.pictureUri = pictureUri;
+        this.position = position;
+        this.roleSet = roleSet;
+        this.likeCnt = 0;
+        this.rudeCnt = 0;
+        this.disclosureScopeState = DisclosureScopeState.PUBLIC;
+    }
+
 }
