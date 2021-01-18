@@ -43,7 +43,8 @@ public class Club {
     @OneToMany(mappedBy = "club", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ClubMember> clubMembers = new ArrayList<>();
 
-    @OneToOne(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "community_id")
     private Community community;
 
     @Builder

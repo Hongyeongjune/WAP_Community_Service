@@ -4,6 +4,7 @@ import com.example.demo.commons.enums.ClubMemberType;
 import com.example.demo.commons.enums.PositionType;
 import com.example.demo.modules.crud.member.entitys.Member;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -38,4 +39,13 @@ public class ClubMember {
 
     @Enumerated(value = EnumType.STRING)
     private ClubMemberType clubMemberType;
+
+    @Builder
+    public ClubMember(Club club, Member member, int uniformNum, PositionType positionType, ClubMemberType clubMemberType) {
+        this.club = club;
+        this.member = member;
+        this.uniformNum = uniformNum;
+        this.positionType = positionType;
+        this.clubMemberType = clubMemberType;
+    }
 }
