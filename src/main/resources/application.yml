@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/we_are_player?verifyServerCertificate=false&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: wap_user
-    password: wap_user
+    password: 1q2w3e4r!!
   jpa:
     hibernate:
       ddl-auto: update
@@ -11,3 +11,4 @@ spring:
     show-sql: true
     database: mysql
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
