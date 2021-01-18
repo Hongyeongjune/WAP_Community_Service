@@ -6,8 +6,7 @@ import com.example.demo.commons.enums.PositionType;
 import lombok.Builder;
 import lombok.Getter;
 
-@Getter
-@Builder
+@Getter @Builder
 public class MemberSaveDto {
     private String id;
     private String password;
