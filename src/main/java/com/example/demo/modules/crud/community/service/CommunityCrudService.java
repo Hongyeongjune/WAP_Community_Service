@@ -24,8 +24,6 @@ public class CommunityCrudService {
 
     private final CommunityCrudRepository communityCrudRepository;
     private final ClubCrudRepository clubCrudRepository;
-    private final ClubMemberCrudRepository clubMemberCrudRepository;
-    private final MemberCrudRepository memberCrudRepository;
 
     /**
      * Apps Layer -> 성능 개선 예정
@@ -35,7 +33,6 @@ public class CommunityCrudService {
      *      QueryDsl, JPQL, @Query 사용하여 데이터베이스 접근 최소화
      *      Post 게시물 페이징 처리
      */
-
     public Community save(CommunitySaveDto dto) {
 
         Club club = clubCrudRepository.findByClubNameAndCityAndDistrict(
