@@ -13,6 +13,7 @@ public enum ErrorCode {
 
     //Club
     CLUB_CANNOT_FOUND(400, "Can't found Club"),
+    CLUB_DUPLICATION(400, "This club already exists"),
 
     //Club Member
     MEMBER_CANNOT_FOUND_IN_CLUB(400, "Can't found member in club"),
