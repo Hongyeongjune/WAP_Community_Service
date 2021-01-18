@@ -3,6 +3,7 @@ package com.example.demo.apps.member.service;
 import com.example.demo.apps.member.dtos.MemberLoginReqDto;
 import com.example.demo.apps.member.dtos.MemberSaveReqDto;
 import com.example.demo.commons.enums.MemberRole;
+import com.example.demo.commons.enums.MemberType;
 import com.example.demo.commons.errors.exception.AccessDeniedAuthenticationException;
 import com.example.demo.commons.errors.exception.MemberNotFoundException;
 import com.example.demo.modules.crud.member.entitys.Member;
@@ -29,9 +30,9 @@ public class MemberService {
          return jwtTokenProvider.createToken(member.getId(), member.getRoleSet());
     }
 
-    public void signUp(String token, MemberSaveReqDto dto) {
-        MemberRole role = Enum.valueOf(MemberRole.class, dto.getType().name());
-        if (!jwtTokenProvider.hasRole(jwtTokenProvider.resolveToken(token), role))
+    public void signUp(MemberSaveReqDto dto) {
+
+        if(dto.getType().equals(MemberType.ADMIN))
             throw new AccessDeniedAuthenticationException();
 
         String encodedPw = passwordEncoder.encode(dto.getPassword());
