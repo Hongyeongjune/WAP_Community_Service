@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface ClubCrudRepository extends JpaRepository<Club, Long> {
     Optional<Club> findByClubNameAndCityAndDistrict(String clubName, String city, String district);
+    boolean existsByClubNameAndCityAndDistrict(String clubName, String city, String district);
 }
