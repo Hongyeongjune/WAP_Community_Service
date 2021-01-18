@@ -4,6 +4,7 @@ import com.example.demo.commons.enums.MemberRole;
 import com.example.demo.commons.errors.ErrorCode;
 import com.example.demo.commons.errors.exception.InvalidJwtAuthenticationException;
 import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
