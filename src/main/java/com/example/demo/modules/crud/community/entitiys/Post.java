@@ -20,7 +20,7 @@ public class Post {
 
     private String title;
     private String content;
-    private int like;
+    private int good;
 
     @CreationTimestamp
     private LocalDateTime registDate;
@@ -37,7 +37,7 @@ public class Post {
     public Post(String title, String content, Community community, Member member) {
         this.title = title;
         this.content = content;
-        this.like = 0;
+        this.good = 0;
         this.community = community;
         this.member = member;
     }
@@ -50,7 +50,7 @@ public class Post {
     }
 
     public Post updateLike() {
-        this.like += 1;
+        this.good += 1;
 
         return this;
     }

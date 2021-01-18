@@ -24,12 +24,11 @@ public class Community {
     @CreationTimestamp
     private LocalDateTime registDate;
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "club_id")
     private Club club;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "post_id")
+    @OneToMany(mappedBy = "community", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Post> post = new ArrayList<>();
 
     @Builder
