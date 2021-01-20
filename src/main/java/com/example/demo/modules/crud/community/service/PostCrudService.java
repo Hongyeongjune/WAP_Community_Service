@@ -15,11 +15,7 @@ import com.example.demo.modules.crud.community.repository.PostCrudRepository;
 import com.example.demo.modules.crud.member.entitys.Member;
 import com.example.demo.modules.crud.member.repository.MemberCrudRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-
-@Service
 @RequiredArgsConstructor
 public class PostCrudService {
 

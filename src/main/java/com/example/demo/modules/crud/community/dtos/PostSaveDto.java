@@ -15,5 +15,4 @@ public class PostSaveDto {
 
     private String title;
     private String content;
-
 }
